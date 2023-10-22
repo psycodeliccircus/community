@@ -1,0 +1,24 @@
+{
+  "name": "community",
+  "version": "2.0.1",
+  "description": "Aplicativo da Community RenildoMarcio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "node build.js --build",
+    "icon": "node build.js --icon=https://raw.githubusercontent.com/psycodeliccircus/community/imagens/1024x1024.png"
+  },
+  "author": "RenildoMarcio",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^27.0.2",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "discord-rich-presence": "^0.0.8",
+    "electron-log": "^4.4.8",
+    "electron-updater": "^6.1.4",
+    "jimp": "^0.22.10",
+    "png2icons": "^2.0.1"
+  }
+}

@@ -68,7 +68,7 @@ function createWindow () {
     }
   ]);
 
-  tray.setToolTip('Community');
+  tray.setToolTip(appConfig['appName']);
   tray.setContextMenu(contextMenu);
 
   mainWindow.webContents.once('dom-ready', () => {
@@ -78,13 +78,6 @@ function createWindow () {
         mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
     })
     autoUpdater.checkForUpdates()
-    /*mainWindow.webContents.executeJavaScript(`
-    Swal.fire({
-        title: 'Play Failed',
-        html: 'Por favor, feche o FiveM.',
-        icon: 'error'
-    });
-  `);*/
   })
 
   mainWindow.on('minimize', (event) => {
@@ -103,11 +96,10 @@ function createWindow () {
     app.isQuitting = true;
   });
 
-  // Defina um manipulador global para o evento 'new-window'
   app.on('web-contents-created', (event, contents) => {
     contents.on('new-window', (event, navigationUrl) => {
-      event.preventDefault(); // Evita a abertura de uma nova janela
-      require('electron').shell.openExternal(navigationUrl); // Abre a URL externa em um navegador padrão
+      event.preventDefault();
+      require('electron').shell.openExternal(navigationUrl);
     });
   });
 }

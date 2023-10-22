@@ -1,6 +1,6 @@
 {
   "name": "community",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Aplicativo da Community RenildoMarcio",
   "main": "main.js",
   "scripts": {
